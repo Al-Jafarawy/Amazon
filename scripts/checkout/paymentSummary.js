@@ -21,7 +21,9 @@ export function renderPaymetSummary() {
   <div class="payment-summary-title ">Order Summary</div>
   <div class="payment-summary-row">
             <div>Items (${cart.length}):</div>
-            <div class="payment-summary-money">$42.75</div>
+            <div class="payment-summary-money">$${formatCurrency(
+              productsPrice
+            )}</div>
           </div>
 
           <div class="payment-summary-row">

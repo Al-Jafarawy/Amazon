@@ -10,8 +10,9 @@ import {
 } from '../../data/deliveryOption.js';
 import { getProduct } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
+import { renderPaymetSummary } from './paymentSummary.js';
 
-export function renderAllPage() {
+export function renderOrderSummary() {
   let HtmlComponant = '';
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
@@ -112,6 +113,7 @@ export function renderAllPage() {
         `.js-cart-item-container-${productIdWilDelete}`
       );
       container.remove();
+      renderPaymetSummary();
     });
   });
 
@@ -126,6 +128,7 @@ export function renderAllPage() {
         `.js-cart-item-container-${productIdWilUpdate}`
       );
       container.remove();
+      // renderPaymetSummary();
     });
   });
   ///////////////////////////////////////
@@ -138,7 +141,8 @@ export function renderAllPage() {
       const { productId, deliveryOptionId } = element.dataset;
       element.addEventListener('click', () => {
         updateDeliveryOptionDate(productId, deliveryOptionId);
-        renderAllPage();
+        renderOrderSummary();
+        renderPaymetSummary();
       });
     });
 }

@@ -10,10 +10,11 @@ if (!cart) {
     {
       productId: '8c9c52b5-5a19-4bcb-a5d1-158a74287c53',
       quantity: 4,
-      deliveryOptionId: '3',
+      deliveryOptionId: '1',
     },
   ];
 }
+console.log(cart);
 cart.forEach((e) => {
   console.log(e.deliveryOptionId);
 });

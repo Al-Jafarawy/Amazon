@@ -1,6 +1,6 @@
-import { formatCurrency } from '../scripts/utils/money.js';
+import { formatCurrency } from '../../scripts/utils/money.js';
 
-describe('Formating Money', () => {
+describe('Formating Money suite', () => {
   it('Convert cents into dollars', () => {
     expect(formatCurrency(3465)).toEqual('34.65');
   });

@@ -25,6 +25,7 @@ export function renderOrderSummary() {
     const dateString = deliveryDate.format('dddd, MMMM D');
 
     HtmlComponant += `<div class="cart-item-container 
+      js-product-quantity${matchingItem.id}
       js-cart-item-container-${matchingItem.id}">
                 <div class="delivery-date">
                   Delivery date: ${dateString}
@@ -52,9 +53,9 @@ export function renderOrderSummary() {
                       }">
                         Update
                       </span>
-                      <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${
+                      <span class="delete-quantity-link link-primary js-delete-link js-test-remove-link-${
                         matchingItem.id
-                      }">
+                      }" data-product-id="${matchingItem.id}">
                         Delete
                       </span>
                     </div>
@@ -86,7 +87,7 @@ export function renderOrderSummary() {
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
       html += `<div class="delivery-option js-delivery-option-selected" 
-                  data-product-id= ${matchingItem.id}
+                  data-product-id=${matchingItem.id}
                   data-delivery-option-id=${deliveryOption.id}>
                       <input type="radio"
                       ${isChecked ? 'checked' : ''}

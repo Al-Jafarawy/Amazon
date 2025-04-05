@@ -36,7 +36,7 @@ export function addTocart(productId) {
     cart.push({
       productId: productId,
       quantity: 1,
-      deliveryOptionId: '3',
+      deliveryOptionId: '1',
     });
   }
   addToLocalStorage();

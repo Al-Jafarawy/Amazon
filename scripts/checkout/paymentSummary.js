@@ -58,7 +58,7 @@ export function renderPaymetSummary() {
           <button class="place-order-button button-primary">
             Place your order
           </button>
-        </div>`;
+            `;
 
   document.querySelector('.js-order-summary').innerHTML = paymetHtml;
 }

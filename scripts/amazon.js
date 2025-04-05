@@ -1,4 +1,4 @@
-import { addTocart, cart } from '../data/cart.js';
+import { addTocart, calcCardQuntity, cart } from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
@@ -74,6 +74,5 @@ function updateCartQuantity() {
   });
   document.querySelector('.cart-quantity').innerHTML = cartQuantity;
 }
-let displayCardNum = cart.length;
 document.querySelector('.js-cart-quantity-customize').innerHTML =
-  displayCardNum;
+  calcCardQuntity();

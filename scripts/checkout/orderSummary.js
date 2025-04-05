@@ -1,5 +1,6 @@
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.13/+esm'; // How can I know that link is useuble
 import {
+  calcCardQuntity,
   cart,
   removeItemFromCart,
   updateDeliveryOptionDate,
@@ -146,4 +147,7 @@ export function renderOrderSummary() {
         renderPaymetSummary();
       });
     });
+
+  document.querySelector('.js-cart-quantity-customize').innerHTML =
+    calcCardQuntity();
 }

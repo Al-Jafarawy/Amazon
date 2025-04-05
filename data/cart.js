@@ -63,3 +63,10 @@ export function updateDeliveryOptionDate(productId, deliveryOptionId) {
   matchingItem.deliveryOptionId = deliveryOptionId;
   addToLocalStorage();
 }
+export function calcCardQuntity() {
+  let total = 0;
+  cart.forEach((item) => {
+    total += item.quantity;
+  });
+  return total;
+}

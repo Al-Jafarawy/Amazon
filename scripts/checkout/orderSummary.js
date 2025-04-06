@@ -148,6 +148,15 @@ export function renderOrderSummary() {
       });
     });
 
-  document.querySelector('.js-cart-quantity-customize').innerHTML =
-    calcCardQuntity();
+  // تحديث الكمية عند النقر في أي مكان في الصفحة
+  document.addEventListener('click', updateCartQuantity);
+
+  // تحديث الكمية عندما يتم تحديث السلة
+  function updateCartQuantity() {
+    document.querySelector('.js-cart-quantity-customize').innerHTML =
+      calcCardQuntity();
+  }
+
+  // التحديث الأولي للكمية
+  updateCartQuantity();
 }

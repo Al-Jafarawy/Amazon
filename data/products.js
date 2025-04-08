@@ -8,6 +8,21 @@ export function getProduct(productId) {
   return matchingItem;
 }
 
+class Product {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
+  constructor(ProductDetalis) {
+    const prodcut1 = new Product();
+    this.id = ele.id;
+    this.image = ele.image;
+    this.name = ele.name;
+    console.log(prodcut1);
+  }
+}
+
 export const products = [
   {
     id: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',

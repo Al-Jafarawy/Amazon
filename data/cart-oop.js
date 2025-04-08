@@ -84,4 +84,4 @@ cart.loadFromStorge();
 businessCart.loadFromStorge();
 
 cart.addTocart('3fdfe8d6-9a15-4979-b459-585b0d0545b9');
-console.log(cart, businessCart);
+// console.log(cart, businessCart);

@@ -9,7 +9,8 @@ describe('test suite:renderOrderSummary', () => {
     spyOn(localStorage, 'setItem');
     document.querySelector('.js-test-continer').innerHTML = `
           <div class="js-checkout-page"></div> 
-          <div class="js-order-summary"></div>         
+          <div class="js-order-summary"></div>
+          <a class="js-cart-quantity-customize"></a>
           `;
     spyOn(localStorage, 'getItem').and.callFake(() => {
       return JSON.stringify([

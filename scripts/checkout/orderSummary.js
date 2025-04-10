@@ -119,22 +119,6 @@ export function renderOrderSummary() {
     });
   });
 
-  //now this code delete product like delete button
-
-  ///////////////////////////////////////
-  document.querySelectorAll('.update-quantity-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      const productIdWilUpdate = link.dataset.productId;
-      removeItemFromCart(productIdWilUpdate);
-      const container = document.querySelector(
-        `.js-cart-item-container-${productIdWilUpdate}`
-      );
-      container.remove();
-      // renderPaymetSummary();
-    });
-  });
-  ///////////////////////////////////////
-
   document
     .querySelectorAll('.js-delivery-option-selected')
     .forEach((element) => {

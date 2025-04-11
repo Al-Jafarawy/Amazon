@@ -43,6 +43,7 @@ class Clothing extends Product {
     this.sizeChartLink = ProductDetalis.sizeChartLink;
   }
   extraInfoHTML() {
+    //retrun porduct.sizeChart
     return `<a target='_blank'
     href='../images/clothing-size-chart.png'>
     Size chart

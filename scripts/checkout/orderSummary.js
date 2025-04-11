@@ -132,7 +132,6 @@ export function renderOrderSummary() {
       });
     });
 
-  س;
   document.addEventListener('click', updateCartQuantity);
 
   function updateCartQuantity() {

@@ -67,12 +67,12 @@ console.log(date.toLocaleTimeString());
 // logThis();
 // logThis.call('Hello');
 
-const object3 = {
-  method: () => {
-    console.log(this);
-  },
-};
-object3.method();
+// const object3 = {
+//   method: () => {
+//     console.log(this);
+//   },
+// };
+// object3.method();
 
 export const products = [
   {

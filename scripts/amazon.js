@@ -1,9 +1,13 @@
 import { addTocart, calcCardQuntity, cart } from '../data/cart.js';
-import { products } from '../data/products.js';
+import { loadProducts, products } from '../data/products.js';
 
-let productsHTML = '';
-products.forEach((product) => {
-  productsHTML += `
+loadProducts(renderProducts);
+
+function renderProducts() {
+  let productsHTML = '';
+
+  products.forEach((product) => {
+    productsHTML += `
         <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
@@ -54,24 +58,25 @@ products.forEach((product) => {
             Add to Cart
           </button>
         </div>`;
-});
-
-// direct without creating vars
-document.querySelector('.js-prod').innerHTML = productsHTML;
-document.querySelectorAll('.js-add-button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const productId = button.dataset.productId;
-    addTocart(productId);
-    updateCartQuantity();
   });
-});
 
-function updateCartQuantity() {
-  let cartQuantity = 0;
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
+  // direct without creating vars
+  document.querySelector('.js-prod').innerHTML = productsHTML;
+  document.querySelectorAll('.js-add-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      addTocart(productId);
+      updateCartQuantity();
+    });
   });
-  document.querySelector('.cart-quantity').innerHTML = cartQuantity;
+
+  function updateCartQuantity() {
+    let cartQuantity = 0;
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+    document.querySelector('.cart-quantity').innerHTML = cartQuantity;
+  }
+  document.querySelector('.js-cart-quantity-customize').innerHTML =
+    calcCardQuntity();
 }
-document.querySelector('.js-cart-quantity-customize').innerHTML =
-  calcCardQuntity();
